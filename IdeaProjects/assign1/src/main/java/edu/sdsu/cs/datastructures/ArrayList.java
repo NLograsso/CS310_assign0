@@ -4,9 +4,13 @@ import java.util.AbstractList;
 import java.util.Collection;
 
 /**
- * Created by nicholaslograsso on 2/5/17.
- * Test using provided Assign1 TestArrayList file from instructor
+ * Nicholas Lograsso
+ * account: CSSC0663
+ * San Diego State Univeristy
+ * CS310 Data Structures, Spring 2017
+ * ArrayList
  */
+
 public class ArrayList <E> extends AbstractList <E> {
 
     //set fields and make reference to an array of generics
@@ -48,17 +52,17 @@ public class ArrayList <E> extends AbstractList <E> {
 
     public E set(int index, E element) {
 
-            //make sure index is in range
-            if (index < 0 || index >= size()) {
+        //make sure index is in range
+        if (index < 0 || index >= size()) {
 
-                throw new IndexOutOfBoundsException();
-            }
-            //save element to be overwritten
-            E previousValue = arrayList[index];
+            throw new IndexOutOfBoundsException();
+        }
+        //save element to be overwritten
+        E previousValue = arrayList[index];
 
-            //set index to the element passed in
-            arrayList[index] = element;
-            return previousValue;
+        //set index to the element passed in
+        arrayList[index] = element;
+        return previousValue;
     } //set
 
     public void add(int index, E element) throws IndexOutOfBoundsException {
@@ -111,18 +115,19 @@ public class ArrayList <E> extends AbstractList <E> {
         return removedElement;
     } //remove
 
-        //calls method within add
-        private E[] resizeArray(int newCapacity) throws OutOfMemoryError,
-                IndexOutOfBoundsException, NullPointerException {
+    //calls method within add
+    private E[] resizeArray(int newCapacity) throws OutOfMemoryError,
+            IndexOutOfBoundsException, NullPointerException {
 
-            //create new array of specified capacity
-            E[] newArray = (E[]) new Object[newCapacity];
+        //create new array of specified capacity
+        E[] newArray = (E[]) new Object[newCapacity];
 
-            //copy the elements from arraylist into new array
-            System.arraycopy(arrayList, 0, newArray, 0, arraySize);
+        //copy the elements from arraylist into new array
+        System.arraycopy(arrayList, 0, newArray, 0, arraySize);
 
-            //return reference to new array
-            return newArray;
-        } //resizeArray
+        //return reference to new array
+        return newArray;
+    } //resizeArray
 
 } //class
+
